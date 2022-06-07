@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "b70b7579-77be-4926-ad85-2e27a60eed1f",
+		"name": "23Bloques Ariadna",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User registration",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user[provider]\": \"email\",\r\n    \"user[email]\": \"kevin.carrillo@ariadnacg.com\",\r\n    \"user[password]\": \"superSecretPass123\",\r\n    \"user[username]\": \"Nickname\",\r\n    \"user[uid]\": \"kevin.carrillo@ariadnacg.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-gateway.23blocks.com/auth/",
+							"protocol": "https",
+							"host": [
+								"stage-gateway",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kevin.carrillo@ariadnacg.com\",\r\n    \"password\": \"superSecretPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-gateway.23blocks.com/auth/sign_in",
+							"protocol": "https",
+							"host": [
+								"stage-gateway",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "eyJzIjoiNER1dC1oMEo0Mmc2Umd6eTRsZ3lReVJTYUNRIiwidiI6MSwicCI6IntcInVcIjozMTEzNTY4NyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3N0YWdlLWdhdGV3YXkuMjNibG9ja3MuY29tXFxcL2F1dGhcXFwvY29uZmlybWF0aW9uP2NvbmZpcm1hdGlvbl90b2tlbj1idUt6Y3I1MzJuRmFMeHcyeWJaQiZyZWRpcmVjdF91cmw9aHR0cDpcXFwvXFxcL2xvY2FsaG9zdCZhcHBpZD05MEF2ZHU2MXotNE1kZ1wiLFwiaWRcIjpcImE0Y2Y4YTgxYzkzOTRkY2E4ZjQ4NWY4ODE2YjYzM2JjXCIsXCJ1cmxfaWRzXCI6W1wiMTE4MGQ3NzAwMzM3YTVhYzJmNzY2YzBhNGNhYTVmMjFkZGY5YTZhOVwiXX0ifQ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registro estudiante",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiVnNIK2QvTG51RWtvQ1poSlNsQlNJU3BITm5ZZ0x6SHlyZFp2SmdnbHVPbz0iLCJleHAiOjE2MjU4NDkwNzl9.PcgLScYAdjCFjp9sJjOxXGkyat8N-GCfJk8edqoc59U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"user_unique_id\": \"11b134e7-2cfa-4e21-b020-a67034c1a98c\",\r\n        \"name\": \"Jhon\",\r\n        \"email\": \"jhon@test.com\",\r\n        \"phone\": \"3123456789\",\r\n        \"role_name\": \"student\",\r\n        \"nickname\": \"jhon\",\r\n        \"uid\": \"jhon@htest.com\",\r\n        \"role_unique_id\": \"69f25208-2807-4921-b5ee-9abdabf859ec\",\r\n        \"time_zone\": \"America/Denver\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-university.23blocks.com/users/11b134e7-2cfa-4e21-b020-a67034c1a98c/register",
+							"protocol": "https",
+							"host": [
+								"stage-university",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"users",
+								"11b134e7-2cfa-4e21-b020-a67034c1a98c",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "Z2iVCYL2MnKo2J8gbuZ3kg",
+								"type": "text"
+							},
+							{
+								"key": "token-type",
+								"value": "Bearer",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "EKSri-h0ASr3JZXHgtfpGA",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": "1626453879",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "kevin.carrillo@ariadnacg.com",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiVnNIK2QvTG51RWtvQ1poSlNsQlNJU3BITm5ZZ0x6SHlyZFp2SmdnbHVPbz0iLCJleHAiOjE2MjU4NDkwNzl9.PcgLScYAdjCFjp9sJjOxXGkyat8N-GCfJk8edqoc59U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stage-gateway.23blocks.com/users",
+							"protocol": "https",
+							"host": [
+								"stage-gateway",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mostrar todas las preguntas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiNWtYc3ZMc1RyeDhhd2xtNjVxcjd1c1BwRlM1STdFTEhtdFJwY1IvdnJtOD0iLCJleHAiOjE2MjU4NDAwMzF9.F5w_f54N5V0Drp1MrfTOGFWc9ik5q5odYIa6FNSRvKc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stage-university.23blocks.com/tests/a8943850-0fc7-4d22-b40d-c629688501b7/questions/b9f48375-d15f-4858-8140-6ddf59c81caa",
+							"protocol": "https",
+							"host": [
+								"stage-university",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"tests",
+								"a8943850-0fc7-4d22-b40d-c629688501b7",
+								"questions",
+								"b9f48375-d15f-4858-8140-6ddf59c81caa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mostrar todas las opciones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiNWtYc3ZMc1RyeDhhd2xtNjVxcjd1c1BwRlM1STdFTEhtdFJwY1IvdnJtOD0iLCJleHAiOjE2MjU4NDAwMzF9.F5w_f54N5V0Drp1MrfTOGFWc9ik5q5odYIa6FNSRvKc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stage-university.23blocks.com/tests/questions/options",
+							"protocol": "https",
+							"host": [
+								"stage-university",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"tests",
+								"questions",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Iniciar test",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiNWtYc3ZMc1RyeDhhd2xtNjVxcjd1c1BwRlM1STdFTEhtdFJwY1IvdnJtOD0iLCJleHAiOjE2MjU4NDAwMzF9.F5w_f54N5V0Drp1MrfTOGFWc9ik5q5odYIa6FNSRvKc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test\": {\r\n        \"source\": \"Internal\",\r\n        \"source_alias\": \"Own Content\",\r\n        \"source_id\": \"1\",\r\n        \"source_type\": \"content_test\",\r\n        \"payload\": {\r\n                \"info\": \"none\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-university.23blocks.com/users/1128affc-bcf2-4c0c-a3d1-98cbc0f3d03d/test/a8943850-0fc7-4d22-b40d-c629688501b7",
+							"protocol": "https",
+							"host": [
+								"stage-university",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"users",
+								"1128affc-bcf2-4c0c-a3d1-98cbc0f3d03d",
+								"test",
+								"a8943850-0fc7-4d22-b40d-c629688501b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consultar todos los estudiantes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							},
+							{
+								"key": "company-token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3VuaXF1ZV9pZCI6IjExYjEzNGU3LTJjZmEtNGUyMS1iMDIwLWE2NzAzNGMxYTk4YyIsInVzZXJfcHJvdmlkZXIiOiJlbWFpbCIsInVzZXJfdWlkIjoia2V2aW4uY2FycmlsbG9AYXJpYWRuYWNnLmNvbSIsInVzZXJfZW1haWwiOiJrZXZpbi5jYXJyaWxsb0BhcmlhZG5hY2cuY29tIiwiY29tcGFueV91bmlxdWVfaWQiOiJjNmQ1MDY5NS0zOWE4LTQzNzgtYmM3OS1jY2RhMWQyNGNkMTQiLCJzY2hlbWFfbmFtZSI6IjdjY2ZhYTM5IiwidXNlcl9yb2xlX2lkIjo0LCJjc3JmX3Rva2VuIjoiNWtYc3ZMc1RyeDhhd2xtNjVxcjd1c1BwRlM1STdFTEhtdFJwY1IvdnJtOD0iLCJleHAiOjE2MjU4NDAwMzF9.F5w_f54N5V0Drp1MrfTOGFWc9ik5q5odYIa6FNSRvKc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stage-university.23blocks.com/users",
+							"protocol": "https",
+							"host": [
+								"stage-university",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "status_name",
+									"value": "active",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "records",
+									"value": "17",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

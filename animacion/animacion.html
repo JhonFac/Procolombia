@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
+    <title></title>
+  </head>
+  <body>
+    <div id="lienzo" class="container" >
+      <button  type="button" class="button" onclick="inc()" name="button">iniciar</button>
+      <div style="margin-top: 425px;"></div>
+    </div>
+  </body>
+<script>
+  console.log('hola');
+</script>
+
+  <script>
+
+  boton = document.getElementsByTagName('button');
+  boton[0].style.backgroundColor= '#F4F6F7';
+
+
+
+
+  data={
+  "group":"A",
+  "P1":[{"nikename":"William", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'1'}],
+  "P2":[{"nikename":"Samuel", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'2'}],
+  "P3":[{"nikename":"Alejo", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'3'}],
+  "P4":[{"nikename":"Juan", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'4'}],
+  "P5":[{"nikename":"David", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'5'}],
+  "P6":[{"nikename":"Karen", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'6'}],
+  "P7":[{"nikename":"Diana", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'7'}],
+  "P8":[{"nikename":"Ximena", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'8'}],
+  "P9":[{"nikename":"Luis", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'9'}],
+  "P10":[{"nikename":"Daniel", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'10'}],
+  "P11":[{"nikename":"Jhon", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'11'}],
+  "P12":[{"nikename":"Juan", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'12'}],
+  "P13":[{"nikename":"Angela", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'13'}],
+  "P14":[{"nikename":"Jeison", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'14'}],
+  "P15":[{"nikename":"Carmeza", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'15'}],
+  "P16":[{"nikename":"Julian", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'16'}],
+  "P17":[{"nikename":"Oscar", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'17'}],
+  "P18":[{"nikename":"Andrea", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'18'}],
+  "P19":[{"nikename":"Martin", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'19'}],
+  "P20":[{"nikename":"Manuel", "time":Math.floor(Math.random()*60),'alltime':'6:34','IdPlayer':'20'}],
+  }
+
+  color=['#A9DFBF','#ABB2B9','#AEB6BF','#CCD1D1','#D5DBDB','#E5E7E9','#F7F9F9','#EDBB99','#F5CBA7','#FAD7A0','#F9E79F','#FCF3CF','#A2D9CE','#A3E4D7','#AED6F1','#A9CCE3','#D2B4DE','#D7BDE2','#F5B7B1','#D98880']
+
+  // data={
+  // "group":"A",
+  // "P1":[{"nikename":"William", "time":"30"}],
+  // "P2":[{"nikename":"Samuel", "time":"30"}],
+  // "P3":[{"nikename":"Alejo", "time":"30"}],
+  // "P4":[{"nikename":"Juan", "time":"30"}],
+  // "P5":[{"nikename":"David", "time":"30"}],
+  // "P6":[{"nikename":"Karen", "time":"30"}],
+  // "P7":[{"nikename":"Diana", "time":"30"}],
+  // "P8":[{"nikename":"Ximena", "time":"30"}],
+  // "P9":[{"nikename":"Luis", "time":"30"}],
+  // "P10":[{"nikename":"Daniel", "time":"30"}],
+  // "P11":[{"nikename":"Jhon", "time":"30"}],
+  // "P12":[{"nikename":"Juan", "time":"30"}],
+  // "P13":[{"nikename":"Angela", "time":"30"}],
+  // "P14":[{"nikename":"Jeison", "time":"30"}],
+  // "P15":[{"nikename":"Carmeza", "time":"30"}],
+  // "P16":[{"nikename":"Julian", "time":"30"}],
+  // "P17":[{"nikename":"Oscar", "time":"30"}],
+  // "P18":[{"nikename":"Andrea", "time":"30"}],
+  // "P19":[{"nikename":"Martin", "time":"30"}],
+  // "P20":[{"nikename":"Manuel", "time":"30"}],
+  // }
+
+function crear(y) {
+    // console.log(y);
+    divP = document.createElement("div");
+    divP.id = "player"+y;
+    document.getElementById("lienzo").appendChild(divP);
+    div = document.createElement("div");
+    div.id = "imagen"+y;
+    div.className += "caja";
+    div.setAttribute("style", "top:-"+(15*y)+"px;");
+    nikename=data['P'+y][0]['nikename']
+    // eval("nikename"+i+"="+nikename);
+    ran=Math.floor(Math.random()*21)
+    div.innerHTML='<img class="bici" id="bici'+y+'" src="biciinicio.png" alt="eclipse"/><p style="background:'+color[ran]+';" class="start">'+nikename+'</p>';
+    document.getElementById("player"+y).appendChild(div);
+    dimension=document.getElementById("lienzo").offsetWidth;
+    eqv=dimension/1349;
+    console.log(eqv);
+    console.log(dimension);
+    seg=(data['P'+y][0]['time'])-30;
+    vel=(0.5*eqv)-(0.0033*seg);
+    eval("v"+i+"="+ran);
+    eval("x"+i+"=0");
+    eval("controlX"+i+"=1");
+    eval("velocidad"+i+"="+vel);
+    eval("t"+i+"=0");
+
+    console.log(eval("v"+i));
+    console.log(eval("x"+i));
+    console.log(eval("controlX"+i));
+    console.log(eval("velocidad"+i));
+    console.log('');
+    console.log('');
+
+
+  }
+for (i = 1; i <= Object.keys(data).length-1; i++) {
+  // console.log(i);
+  crear(i)
+}
+
+// var newItem = document.createElement("h5");
+// var textnode = document.createTextNode("Puesto: Nikename:  tiempo: ");
+// newItem.appendChild(textnode);
+//
+//
+// list = document.getElementById("player1");
+// list.insertBefore(newItem, list.childNodes[0]);
+//
+// list = document.getElementById("player2");
+// list.insertBefore(newItem, list.childNodes[0]);
+//
+// list = document.getElementById("player3");
+// list.insertBefore(newItem, list.childNodes[0]);
+
+
+
+function inc(){
+  position=1
+  pocces=setInterval(function(){
+     mover1()
+     mover2()
+     mover3()
+     mover4()
+     mover5()
+     mover6()
+     mover7()
+     mover8()
+     mover9()
+     mover10()
+     mover11()
+     mover12()
+     mover13()
+     mover14()
+     mover15()
+     mover16()
+     mover17()
+     mover18()
+     mover19()
+     mover20()
+   }, 5);
+
+
+
+
+   // intervalo2=setInterval("mover1()",5);
+   // intervalo1=setInterval("mover2()",5);
+   // intervalo3=setInterval("mover3()",5);
+   // intervalo4=setInterval("mover4()",5);
+   // intervalo4=setInterval("mover5()",5);
+   // intervalo4=setInterval("mover6()",5);
+   // intervalo4=setInterval("mover7()",5);
+   // intervalo4=setInterval("mover8()",5);
+   // intervalo4=setInterval("mover9()",5);
+   // intervalo4=setInterval("mover10()",5);
+   // intervalo4=setInterval("mover11()",5);
+   // intervalo4=setInterval("mover12()",5);
+   // intervalo4=setInterval("mover13()",5);
+   // intervalo4=setInterval("mover14()",5);
+   // intervalo4=setInterval("mover15()",5);
+   // intervalo4=setInterval("mover16()",5);
+   // intervalo4=setInterval("mover17()",5);
+   // intervalo4=setInterval("mover18()",5);
+   // intervalo4=setInterval("mover19()",5);
+   // intervalo4=setInterval("mover20()",5);
+
+
+
+}
+
+function finish(a) {
+
+document.getElementById("imagen"+a).innerHTML='';
+document.getElementById("imagen"+a).innerHTML='<img class="bici" src="llegada-unscreen.gif" />';
+// document.getElementById("fin").innerHTML = '<p>'+position+': '+a+'</p>';
+
+alltime=(data['P'+a][0]['alltime']);
+nikename=(data['P'+a][0]['nikename']);
+IdPlayer=(data['P'+a][0]['IdPlayer']);
+
+if (position==1) {
+  newItem = document.createElement("h1");
+  setInterval(function(){
+    ran=Math.floor(Math.random()*21)
+    console.log(color[ran]);
+    h1 = document.getElementsByTagName('h1');
+    // h1.style.backgroundColor = "''"+color[ran]+"''";
+    f='#F4F6F7'
+    f=color[ran]
+
+    h1[0].style.background = f;
+  }, 500);
+}
+else {newItem = document.createElement("h3");}
+textnode = document.createTextNode(nikename+'  '+alltime);
+newItem.appendChild(textnode);
+
+list = document.getElementById("player"+position);
+list.insertBefore(newItem, list.childNodes[0]);
+
+// document.getElementById("player"+position).innerHTML='<p>Puesto:'+position+' Nikename: '+nikename+' tiempo: '+alltime+'</p>'
+
+
+position+=1
+if (position>Object.keys(data).length-1) {clearInterval(pocces);}
+}
+
+
+function mover1(){
+    // if (v1==0 && x1<(document.getElementById("lienzo").offsetWidth-50)/3){console.log(velocidad1);}
+    // else if (v1==1 && x1>=((document.getElementById("lienzo").offsetWidth-50)*(2/3))){v1=2;velocidad1=velocidad1*2;}
+    if(controlX1==1){x1+=velocidad1;}
+    else{x1=0;}
+    if(x1<=0){controlX1=1; x1=0;}
+    else if(x1>=document.getElementById("lienzo").offsetWidth-50){
+        // detiene al cilista al llegar a la meta
+        x1=document.getElementById("lienzo").offsetWidth-50;
+        if (t1==0) {finish(1);t1=1;}
+    }
+    if(x1<document.getElementById("lienzo").offsetWidth-50){
+      document.getElementById("imagen1").innerHTML='<p class="runing" style="background:'+color[v1]+';">'+data['P1'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+      document.getElementById("imagen1").style.left=String(x1)+"px";
+    }
+}
+function mover2(){
+  if(controlX2==2){x2+=velocidad2;}
+  else{x2=0;}
+  if(x2<=0){controlX2=2; x2=0;}
+  else if(x2>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x2=document.getElementById("lienzo").offsetWidth-50;
+      if (t2==0) {finish(2);t2=2;}
+  }
+  if(x2<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen2").innerHTML='<p class="runing" style="background:'+color[v2]+';">'+data['P2'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen2").style.left=String(x2)+"px";
+  }
+
+}
+function mover3(){
+  if(controlX3==3){x3+=velocidad3;}
+  else{x3=0;}
+  if(x3<=0){controlX3=3; x3=0;}
+  else if(x3>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x3=document.getElementById("lienzo").offsetWidth-50;
+      if (t3==0) {finish(3);t3=3;}
+  }
+  if(x3<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen3").innerHTML='<p class="runing" style="background:'+color[v3]+';">'+data['P3'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen3").style.left=String(x3)+"px";
+  }
+}
+function mover4(){
+  if(controlX4==4){x4+=velocidad4;}
+  else{x4=0;}
+  if(x4<=0){controlX4=4; x4=0;}
+  else if(x4>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x4=document.getElementById("lienzo").offsetWidth-50;
+      if (t4==0) {finish(4);t4=4;}
+  }
+  if(x4<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen4").innerHTML='<p class="runing" style="background:'+color[v4]+';">'+data['P4'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen4").style.left=String(x4)+"px";
+  }
+}
+function mover5(){
+  if(controlX5==5){x5+=velocidad5;}
+  else{x5=0;}
+  if(x5<=0){controlX5=5; x5=0;}
+  else if(x5>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x5=document.getElementById("lienzo").offsetWidth-50;
+      if (t5==0) {finish(5);t5=5;}
+  }
+  if(x5<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen5").innerHTML='<p class="runing" style="background:'+color[v5]+';">'+data['P5'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen5").style.left=String(x5)+"px";
+  }
+}
+function mover6(){
+  if(controlX6==6){x6+=velocidad6;}
+  else{x6=0;}
+  if(x6<=0){controlX6=6; x6=0;}
+  else if(x6>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x6=document.getElementById("lienzo").offsetWidth-50;
+      if (t6==0) {finish(6);t6=6;}
+  }
+  if(x6<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen6").innerHTML='<p class="runing" style="background:'+color[v6]+';">'+data['P6'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen6").style.left=String(x6)+"px";
+  }
+}
+function mover7(){
+  if(controlX7==7){x7+=velocidad7;}
+  else{x7=0;}
+  if(x7<=0){controlX7=7; x7=0;}
+  else if(x7>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x7=document.getElementById("lienzo").offsetWidth-50;
+      if (t7==0) {finish(7);t7=7;}
+  }
+  if(x7<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen7").innerHTML='<p class="runing" style="background:'+color[v7]+';">'+data['P7'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen7").style.left=String(x7)+"px";
+  }
+}
+function mover8(){
+  if(controlX8==8){x8+=velocidad8;}
+  else{x8=0;}
+  if(x8<=0){controlX8=8; x8=0;}
+  else if(x8>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x8=document.getElementById("lienzo").offsetWidth-50;
+      if (t8==0) {finish(8);t8=8;}
+  }
+  if(x8<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen8").innerHTML='<p class="runing" style="background:'+color[v8]+';">'+data['P8'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen8").style.left=String(x8)+"px";
+  }
+}
+function mover9(){
+  if(controlX9==9){x9+=velocidad9;}
+  else{x9=0;}
+  if(x9<=0){controlX9=9; x9=0;}
+  else if(x9>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x9=document.getElementById("lienzo").offsetWidth-50;
+      if (91==0) {finish(9);t9=1;}
+  }
+  if(x9<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen9").innerHTML='<p class="runing" style="background:'+color[v9]+';">'+data['P9'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen9").style.left=String(x9)+"px";
+  }
+}
+function mover10(){
+  if(controlX10==10){x10+=velocidad10;}
+  else{x10=0;}
+  if(x10<=0){controlX10=10; x10=0;}
+  else if(x10>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x10=document.getElementById("lienzo").offsetWidth-50;
+      if (t10==0) {finish(10);t10=1;}
+  }
+  if(x10<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen10").innerHTML='<p class="runing" style="background:'+color[v10]+';">'+data['P10'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen10").style.left=String(x10)+"px";
+  }
+}
+function mover11(){
+  if(controlX11==11){x11+=velocidad11;}
+  else{x11=0;}
+  if(x11<=0){controlX11=11; x11=0;}
+  else if(x11>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x11=document.getElementById("lienzo").offsetWidth-50;
+      if (t11==0) {finish(11);t11=1;}
+  }
+  if(x11<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen11").innerHTML='<p class="runing" style="background:'+color[v11]+';">'+data['P11'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen11").style.left=String(x11)+"px";
+  }
+}
+function mover12(){
+  if(controlX12==12){x12+=velocidad12;}
+  else{x12=0;}
+  if(x12<=0){controlX12=12; x12=0;}
+  else if(x12>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x12=document.getElementById("lienzo").offsetWidth-50;
+      if (t12==0) {finish(12);t12=1;}
+  }
+  if(x12<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen12").innerHTML='<p class="runing" style="background:'+color[v12]+';">'+data['P12'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen12").style.left=String(x12)+"px";
+  }
+}
+function mover13(){
+  if(controlX13==13){x13+=velocidad13;}
+  else{x13=0;}
+  if(x13<=0){controlX13=13; x13=0;}
+  else if(x13>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x13=document.getElementById("lienzo").offsetWidth-50;
+      if (t13==0) {finish(13);t13=1;}
+  }
+  if(x13<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen13").innerHTML='<p class="runing" style="background:'+color[v13]+';">'+data['P13'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen13").style.left=String(x13)+"px";
+  }
+}
+function mover14(){
+  if(controlX14==14){x14+=velocidad14;}
+  else{x14=0;}
+  if(x14<=0){controlX14=14; x14=0;}
+  else if(x14>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x14=document.getElementById("lienzo").offsetWidth-50;
+      if (t14==0) {finish(14);t14=1;}
+  }
+  if(x14<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen14").innerHTML='<p class="runing" style="background:'+color[v14]+';">'+data['P14'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen14").style.left=String(x14)+"px";
+  }
+}
+function mover15(){
+  if(controlX15==15){x15+=velocidad15;}
+  else{x15=0;}
+  if(x15<=0){controlX15=15; x15=0;}
+  else if(x15>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x15=document.getElementById("lienzo").offsetWidth-50;
+      if (t15==0) {finish(15);t15=1;}
+  }
+  if(x15<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen15").innerHTML='<p class="runing" style="background:'+color[v15]+';">'+data['P15'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen15").style.left=String(x15)+"px";
+  }
+}
+function mover16(){
+  if(controlX16==16){x16+=velocidad16;}
+  else{x16=0;}
+  if(x16<=0){controlX16=16; x16=0;}
+  else if(x16>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x16=document.getElementById("lienzo").offsetWidth-50;
+      if (t16==0) {finish(16);t16=1;}
+  }
+  if(x16<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen16").innerHTML='<p class="runing" style="background:'+color[v16]+';">'+data['P16'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen16").style.left=String(x16)+"px";
+  }
+}
+function mover17(){
+  if(controlX17==17){x17+=velocidad17;}
+  else{x17=0;}
+  if(x17<=0){controlX17=17; x17=0;}
+  else if(x17>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x17=document.getElementById("lienzo").offsetWidth-50;
+      if (t17==0) {finish(17);t17=1;}
+  }
+  if(x17<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen17").innerHTML='<p class="runing" style="background:'+color[v17]+';">'+data['P17'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen17").style.left=String(x17)+"px";
+  }
+}
+function mover18(){
+  if(controlX18==18){x18+=velocidad18;}
+  else{x18=0;}
+  if(x18<=0){controlX18=18; x18=0;}
+  else if(x18>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x18=document.getElementById("lienzo").offsetWidth-50;
+      if (t18==0) {finish(18);t18=1;}
+  }
+  if(x18<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen18").innerHTML='<p class="runing" style="background:'+color[v18]+';">'+data['P18'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen18").style.left=String(x18)+"px";
+  }
+}
+function mover19(){
+  if(controlX19==19){x19+=velocidad19;}
+  else{x19=0;}
+  if(x19<=0){controlX19=19; x19=0;}
+  else if(x19>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x19=document.getElementById("lienzo").offsetWidth-50;
+      if (t19==0) {finish(19);t19=1;}
+  }
+  if(x19<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen19").innerHTML='<p class="runing" style="background:'+color[v19]+';">'+data['P19'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen19").style.left=String(x19)+"px";
+  }
+}
+function mover20(){
+  if(controlX20==20){x20+=velocidad20;}
+  else{x20=0;}
+  if(x20<=0){controlX20=20; x20=0;}
+  else if(x20>=document.getElementById("lienzo").offsetWidth-50){
+      // detiene al cilista al llegar a la meta
+      x20=document.getElementById("lienzo").offsetWidth-50;
+      if (t20==0) {finish(20);t20=1;}
+  }
+  if(x20<document.getElementById("lienzo").offsetWidth-50){
+    document.getElementById("imagen20").innerHTML='<p class="runing" style="background:'+color[v20]+';">'+data['P20'][0]['nikename']+'</p><img class="bici" src="bicicleta-unscreen.gif" />';
+    document.getElementById("imagen20").style.left=String(x20)+"px";
+  }
+}
+
+</script>
+
+
+</html>

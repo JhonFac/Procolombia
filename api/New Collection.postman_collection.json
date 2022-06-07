@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "b70b7579-77be-4926-ad85-2e27a60eed1f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User registration",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user[provider]\": \"email\",\r\n    \"user[email]\": \"kevin.carrillo@ariadnacg.com\",\r\n    \"user[password]\": \"superSecretPass123\",\r\n    \"user[username]\": \"Nickname\",\r\n    \"user[uid]\": \"kevin.carrillo@ariadnacg.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-gateway.23blocks.com/auth/",
+							"protocol": "https",
+							"host": [
+								"stage-gateway",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "APPID",
+								"value": "90Avdu61z-4Mdg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kevin.carrillo@ariadnacg.com\",\r\n    \"password\": \"superSecretPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stage-gateway.23blocks.com/auth/sign_in",
+							"protocol": "https",
+							"host": [
+								"stage-gateway",
+								"23blocks",
+								"com"
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "eyJzIjoiNER1dC1oMEo0Mmc2Umd6eTRsZ3lReVJTYUNRIiwidiI6MSwicCI6IntcInVcIjozMTEzNTY4NyxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3N0YWdlLWdhdGV3YXkuMjNibG9ja3MuY29tXFxcL2F1dGhcXFwvY29uZmlybWF0aW9uP2NvbmZpcm1hdGlvbl90b2tlbj1idUt6Y3I1MzJuRmFMeHcyeWJaQiZyZWRpcmVjdF91cmw9aHR0cDpcXFwvXFxcL2xvY2FsaG9zdCZhcHBpZD05MEF2ZHU2MXotNE1kZ1wiLFwiaWRcIjpcImE0Y2Y4YTgxYzkzOTRkY2E4ZjQ4NWY4ODE2YjYzM2JjXCIsXCJ1cmxfaWRzXCI6W1wiMTE4MGQ3NzAwMzM3YTVhYzJmNzY2YzBhNGNhYTVmMjFkZGY5YTZhOVwiXX0ifQ",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

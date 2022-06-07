@@ -1,0 +1,100 @@
+
+  data={
+  "group":"A",
+  "P1":[{"nikename":"kevin", "time":"30"}],
+  "P2":[{"nikename":"Daniel", "time":"30"}],
+  "P3":[{"nikename":"Alejo", "time":"30"}],
+  "P4":[{"nikename":"David", "time":"30"}],
+  "P5":[{"nikename":"Jhon", "time":"30"}],
+  "P6":[{"nikename":"Karen", "time":"30"}],
+  "P7":[{"nikename":"Diana", "time":"30"}],
+  "P8":[{"nikename":"Ximena", "time":"30"}],
+  "P9":[{"nikename":"Luis", "time":"30"}],
+  "P10":[{"nikename":"Samuel", "time":"30"}],
+  "P11":[{"nikename":"William", "time":"30"}],
+  "P12":[{"nikename":"Juan", "time":"30"}],
+  "P13":[{"nikename":"Angela", "time":"30"}],
+  "P14":[{"nikename":"Jeison", "time":"30"}],
+  "P15":[{"nikename":"Carmeza", "time":"30"}],
+  "P16":[{"nikename":"Julian", "time":"30"}],
+  "P17":[{"nikename":"Oscar", "time":"34"}],
+  "P18":[{"nikename":"Andrea", "time":"33"}],
+  "P19":[{"nikename":"Martin", "time":"32"}],
+  "P20":[{"nikename":"Manuel", "time":"31"}],
+  }
+
+
+
+  // for (i = 1; i <= Object.keys(data).length-1; i++) {
+  //   x=0
+  //   eval("v"+i+"="+x);
+  //   eval("x"+i+"="+x);
+  //   eval("controlX"+i+"="+x);
+  //   eval("velocidad"+i+"="+x);
+  // }
+  //
+  // console.log(velocidad1);
+  // console.log(velocidad2);
+  // console.log(velocidad3);
+  // console.log(velocidad4);
+  // console.log(velocidad20);
+  // console.log('');
+  // console.log('');
+  // console.log('');
+
+  // dimension=document.getElementById("lienzo").offsetWidth
+  // eqv=dimension/1307
+
+
+
+
+
+
+
+
+
+// keyCount  = Object.keys(data).length;
+// console.log(Object.keys(data).length-1);
+// console.log(data['group']);
+// console.log(data['P1'][0]['nikename']);
+// console.log(data['P2'][0]['nikename']);
+// console.log('');
+
+// console.log(ValRuning);
+
+
+function crear(y) {
+    // console.log(y);
+    div = document.createElement("div");
+    div.id = "imagen"+y;
+    div.className += "caja";
+    div.setAttribute("style", "top:-"+(10*y)+"px;");
+    nikename=data['P'+y][0]['nikename']
+    div.innerHTML='<img class="bici" id="bici'+y+'" src="biciinicio.png" alt="eclipse"/><p class="start">'+nikename+'</p>';
+    document.getElementById("lienzo").appendChild(div);
+
+    dimension=document.getElementById("lienzo").offsetWidth;
+    eqv=dimension/1349;
+    console.log(eqv);
+    console.log(dimension);
+    seg=(data['P'+y][0]['time'])-30;
+    vel=(0.22*eqv)-(0.0033*seg);
+    eval("v"+i+"=0");
+    eval("x"+i+"=0");
+    eval("controlX"+i+"=1");
+    eval("velocidad"+i+"="+vel);
+
+
+    console.log(eval("v"+i));
+    console.log(eval("x"+i));
+    console.log(eval("controlX"+i));
+    console.log(eval("velocidad"+i));
+    console.log('');
+    console.log('');
+
+  }
+
+  for (i = 1; i <= Object.keys(data).length-1; i++) {
+    // console.log(i);
+    crear(i)
+  }
